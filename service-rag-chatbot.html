@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot | Vijay Bairagi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-box">VB</div>
+                <div class="logo-text">Vijay Bairagi</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn">Hire Me</a>
+            <button class="hamburger" id="hamburger-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="page-title"><span>RAG Chatbot</span></h1>
+            <p class="page-subtitle" style="margin-bottom: 24px;">Let your customers chat with your documents</p>
+            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80" alt="RAG Chatbot" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px;">
+        </div>
+    </header>
+
+    <section class="section container">
+        <div class="grid-2">
+            <div data-aos="fade-right">
+                <h2 class="section-title">What it does</h2>
+                <p style="color: var(--text-muted); font-size: 18px; line-height: 1.8;">
+                    A RAG (Retrieval Augmented Generation) Chatbot lets you upload your PDFs, manuals, product catalogs or knowledge base — and your customers can ask questions and get accurate answers instantly. No hallucinations, no wrong information, fully customizable to your brand.
+                </p>
+            </div>
+            <div data-aos="fade-left">
+                <div class="service-card" style="margin-bottom:0">
+                    <h3 style="margin-top:0">Key Features</h3>
+                    <ul class="service-features" style="flex-direction:column; align-items:flex-start">
+                        <li><i data-lucide="check"></i> Upload PDFs, Word docs, URLs</li>
+                        <li><i data-lucide="check"></i> Accurate answers from your content only</li>
+                        <li><i data-lucide="check"></i> Zero hallucinations with source citations</li>
+                        <li><i data-lucide="check"></i> Embeddable on any website</li>
+                        <li><i data-lucide="check"></i> Custom branding and tone</li>
+                        <li><i data-lucide="check"></i> Analytics dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;" data-aos="fade-up">
+            <h2 class="section-title">Tech Stack used</h2>
+            <div class="tech-pills">
+                <span class="pill">RAG</span><span class="pill">Vector DBs</span><span class="pill">LangChain</span>
+                <span class="pill">Python</span><span class="pill">FastAPI</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;" data-aos="fade-up">
+            <h2 class="section-title">Who is this for</h2>
+            <div class="grid-4" style="grid-template-columns: repeat(5, 1fr);">
+                <div class="service-preview-card" style="text-align:center"><h4 style="margin:0">SaaS companies</h4></div>
+                <div class="service-preview-card" style="text-align:center"><h4 style="margin:0">Law firms</h4></div>
+                <div class="service-preview-card" style="text-align:center"><h4 style="margin:0">EdTech platforms</h4></div>
+                <div class="service-preview-card" style="text-align:center"><h4 style="margin:0">E-commerce</h4></div>
+                <div class="service-preview-card" style="text-align:center"><h4 style="margin:0">Healthcare</h4></div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px;" data-aos="fade-up">
+            <div class="cta-strip" style="justify-content:center">
+                <a href="contact.html?service=RAG Chatbot" class="btn btn-filled" style="padding: 16px 32px; font-size: 18px;">Book a Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">Vijay Bairagi © 2025 · Agentic AI Engineer · Indore</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/vijaybairagi" target="_blank" class="footer-social-link"><i data-lucide="linkedin"></i></a>
+                <a href="https://github.com/Vijayvsnv" target="_blank" class="footer-social-link"><i data-lucide="github"></i></a>
+                <a href="mailto:vijayvaishnav906@gmail.com" class="footer-social-link"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

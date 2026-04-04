@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Vijay Bairagi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-box">VB</div>
+                <div class="logo-text">Vijay Bairagi</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn">Hire Me</a>
+            <button class="hamburger" id="hamburger-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="page-title"><span>What I Build</span></h1>
+            <p class="page-subtitle">Autonomous AI systems for modern businesses</p>
+        </div>
+    </header>
+
+    <section class="section container">
+        <div class="grid-2">
+            <!-- AI Sales Agent Card -->
+            <div class="service-card" data-aos="fade-up" style="display:flex; flex-direction:column; padding: 40px; margin-bottom: 0;">
+                <div style="background: rgba(0, 212, 255, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); margin-bottom: 24px;">
+                    <i data-lucide="bot" style="width: 48px; height: 48px; color: var(--accent-cyan);"></i>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 12px 0;">AI Sales Agent</h3>
+                <p class="service-desc" style="flex-grow: 1;">An autonomous AI agent that replaces manual qualification to work as your 24/7 sales representative globally.</p>
+                <ul class="service-features" style="flex-direction:column; align-items:flex-start;">
+                    <li><i data-lucide="check-circle"></i> Lead qualification</li>
+                    <li><i data-lucide="check-circle"></i> Auto follow-up sequences</li>
+                    <li><i data-lucide="check-circle"></i> Calendar meeting booking</li>
+                    <li><i data-lucide="check-circle"></i> Instant CRM integration</li>
+                </ul>
+                <div class="tech-pills" style="margin-bottom: 32px;">
+                    <span class="pill">LangChain</span><span class="pill">FastAPI</span><span class="pill">RAG</span>
+                </div>
+                <a href="descriptions/ai-sales-agent.html" class="btn btn-outline" style="width: 100%; border-color: var(--accent-cyan); color: var(--accent-cyan); justify-content:center;">
+                  Explore Service <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                </a>
+            </div>
+
+            <!-- AI Receptionist Card -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="display:flex; flex-direction:column; padding: 40px; margin-bottom: 0;">
+                <div style="background: rgba(0, 212, 255, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); margin-bottom: 24px;">
+                    <i data-lucide="phone-call" style="width: 48px; height: 48px; color: var(--accent-cyan);"></i>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 12px 0;">AI Receptionist</h3>
+                <p class="service-desc" style="flex-grow: 1;">Custom AI receptionist for clinics, gyms and small businesses managing automated appointments reliably 24/7.</p>
+                <ul class="service-features" style="flex-direction:column; align-items:flex-start;">
+                    <li><i data-lucide="check-circle"></i> Appointment booking</li>
+                    <li><i data-lucide="check-circle"></i> WhatsApp integration</li>
+                    <li><i data-lucide="check-circle"></i> Business FAQ handling</li>
+                    <li><i data-lucide="check-circle"></i> Smart reminder system</li>
+                </ul>
+                <div class="tech-pills" style="margin-bottom: 32px;">
+                    <span class="pill">LLMs</span><span class="pill">Vapi AI</span><span class="pill">WhatsApp API</span>
+                </div>
+                <a href="descriptions/ai-receptionist.html" class="btn btn-outline" style="width: 100%; border-color: var(--accent-cyan); color: var(--accent-cyan); justify-content:center;">
+                  Explore Service <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                </a>
+            </div>
+
+            <!-- RAG Chatbot Card -->
+            <div class="service-card" data-aos="fade-up" style="display:flex; flex-direction:column; padding: 40px; margin-bottom: 0;">
+                <div style="background: rgba(0, 212, 255, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); margin-bottom: 24px;">
+                    <i data-lucide="message-square" style="width: 48px; height: 48px; color: var(--accent-cyan);"></i>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 12px 0;">RAG Chatbot</h3>
+                <p class="service-desc" style="flex-grow: 1;">Upload and sync documents to let your customers directly chat with them. Zero hallucinations with precise, accurate answers.</p>
+                <ul class="service-features" style="flex-direction:column; align-items:flex-start;">
+                    <li><i data-lucide="check-circle"></i> Manuals & PDF ingestion</li>
+                    <li><i data-lucide="check-circle"></i> Intelligent vector search</li>
+                    <li><i data-lucide="check-circle"></i> Multi-doc syncing</li>
+                    <li><i data-lucide="check-circle"></i> Custom tone & branding</li>
+                </ul>
+                <div class="tech-pills" style="margin-bottom: 32px;">
+                    <span class="pill">RAG</span><span class="pill">Vector DBs</span><span class="pill">Python</span>
+                </div>
+                <a href="descriptions/rag-chatbot.html" class="btn btn-outline" style="width: 100%; border-color: var(--accent-cyan); color: var(--accent-cyan); justify-content:center;">
+                  Explore Service <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                </a>
+            </div>
+
+            <!-- Workflow Automation Card -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100" style="display:flex; flex-direction:column; padding: 40px; margin-bottom: 0;">
+                <div style="background: rgba(0, 212, 255, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); margin-bottom: 24px;">
+                    <i data-lucide="workflow" style="width: 48px; height: 48px; color: var(--accent-cyan);"></i>
+                </div>
+                <h3 style="font-size: 24px; font-weight: 700; margin: 0 0 12px 0;">Workflow Automation</h3>
+                <p class="service-desc" style="flex-grow: 1;">End-to-end process automation. Connect existing legacy tools together to eliminate complex internal manual tasks.</p>
+                <ul class="service-features" style="flex-direction:column; align-items:flex-start;">
+                    <li><i data-lucide="check-circle"></i> API Tool orchestration</li>
+                    <li><i data-lucide="check-circle"></i> LLM-based pipelines</li>
+                    <li><i data-lucide="check-circle"></i> Deep scheduled tasks</li>
+                    <li><i data-lucide="check-circle"></i> Advanced error handling</li>
+                </ul>
+                <div class="tech-pills" style="margin-bottom: 32px;">
+                    <span class="pill">n8n</span><span class="pill">LLMs</span><span class="pill">Docker</span>
+                </div>
+                <a href="descriptions/workflow-automation.html" class="btn btn-outline" style="width: 100%; border-color: var(--accent-cyan); color: var(--accent-cyan); justify-content:center;">
+                  Explore Service <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="cta-strip" style="margin-top: 80px;" data-aos="zoom-in">
+            <h2>Have a custom project in mind?</h2>
+            <a href="contact.html" class="btn btn-filled">Contact Me</a>
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">VB</span>
+          <div>
+            <p class="footer-name">Vijay Bairagi</p>
+            <p class="footer-title">
+              Agentic AI & Generative AI Specialist
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/vijaybairagi" 
+             target="_blank" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 
+              2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Vijayvsnv" 
+             target="_blank" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 
+              3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 
+              5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 
+              16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 
+              5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 
+              3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="mailto:vijayvaishnav906@gmail.com" 
+             title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 
+              2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          Made with passion · Indore, India
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Vijay Bairagi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-box">VB</div>
+                <div class="logo-text">Vijay Bairagi</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn">Hire Me</a>
+            <button class="hamburger" id="hamburger-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="page-title"><span>About Me</span></h1>
+        </div>
+    </header>
+
+    <!-- Bio & Stats -->
+    <section class="section container">
+        <div class="grid-2">
+            <div data-aos="fade-right">
+                <div class="hero-photo-container">
+                  <img src="images/profile.jpg.jpeg" 
+                       alt="Vijay Bairagi"
+                       onerror="this.style.display='none'; 
+                       this.nextElementSibling.style.display='flex'">
+                  <div class="photo-fallback" style="display:none">
+                    <i data-lucide="user" style="width:80px;height:80px;
+                    color:#00d4ff;opacity:0.5"></i>
+                    <p style="color:#555;font-size:13px;margin-top:12px">
+                    Add profile.jpg to images/</p>
+                  </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <p style="font-size: 18px; line-height: 1.8; color: var(--text-muted); margin-bottom: 32px;">
+                    <strong style="color: white;">I'm Vijay Bairagi, an AI/ML Engineer from Indore specializing in Agentic AI systems.</strong><br><br>
+                    Currently working as SDE Intern at Codenscious Technologies, Indore, building production-grade LLMs, RAG systems, Diffusion Models and Vision Language Models. I completed my MCA in AI/ML from Oriental University, Indore.
+                </p>
+                <div class="grid-3" style="gap:16px;">
+                    <div class="stat-card">
+                        <h3>15-20%</h3>
+                        <p>Model Accuracy Improved</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>90%+</h3>
+                        <p>Detection Accuracy</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>4+</h3>
+                        <p>Real-world Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section container">
+        <h2 class="section-title" data-aos="fade-up">Experience & Education</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2025 – Present</span>
+                    <h3 class="timeline-title">SDE Intern — Codenscious Technologies, Indore</h3>
+                    <p class="timeline-desc">Building LLMs, RAG, Diffusion Models, VLMs | Fine-tuned VLMs with LoRA</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug–Dec 2025</span>
+                    <h3 class="timeline-title">Data Scientist Trainee — Arcap REIT AI, Hyderabad</h3>
+                    <p class="timeline-desc">ML model development, preprocessing pipelines</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">May 2025</span>
+                    <h3 class="timeline-title">MCA AI/ML — Oriental University, Indore</h3>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Apr 2024–Apr 2025</span>
+                    <h3 class="timeline-title">Data Analyst Certificate — PW Skills</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Strengths & Tech Stack -->
+    <section class="section container">
+        <h2 class="section-title" data-aos="fade-up">Tech Stack & Strengths</h2>
+        <div class="grid-2">
+            <div data-aos="fade-up">
+                <div class="service-preview-card" style="margin-bottom: 24px; padding: 24px;">
+                    <h3 style="margin: 0 0 8px 0; color:var(--accent-cyan);">Problem Solving</h3>
+                </div>
+                <div class="service-preview-card" style="margin-bottom: 24px; padding: 24px;">
+                    <h3 style="margin: 0 0 8px 0; color:var(--accent-cyan);">Research Mindset</h3>
+                </div>
+                <div class="service-preview-card" style="padding: 24px;">
+                    <h3 style="margin: 0 0 8px 0; color:var(--accent-cyan);">Quick Learner</h3>
+                </div>
+            </div>
+            <div data-aos="fade-up">
+                <div class="tech-category">
+                    <h4>Languages</h4>
+                    <div class="tech-pills"><span class="pill">Python</span><span class="pill">SQL</span></div>
+                </div>
+                <div class="tech-category">
+                    <h4>AI/ML</h4>
+                    <div class="tech-pills"><span class="pill">LangChain</span><span class="pill">RAG</span><span class="pill">LLMs</span><span class="pill">LoRA</span><span class="pill">CLIP</span><span class="pill">VLMs</span><span class="pill">Diffusion Models</span><span class="pill">TensorFlow</span><span class="pill">PyTorch</span><span class="pill">Scikit-learn</span></div>
+                </div>
+                <div class="tech-category">
+                    <h4>Backend</h4>
+                    <div class="tech-pills"><span class="pill">FastAPI</span><span class="pill">REST APIs</span><span class="pill">Flask</span></div>
+                </div>
+                <div class="tech-category">
+                    <h4>Automation & Cloud</h4>
+                    <div class="tech-pills"><span class="pill">n8n</span><span class="pill">Docker</span><span class="pill">AWS S3</span><span class="pill">Git</span></div>
+                </div>
+                <div class="tech-category">
+                    <h4>Databases</h4>
+                    <div class="tech-pills"><span class="pill">PostgreSQL</span><span class="pill">MySQL</span><span class="pill">Vector DBs</span><span class="pill">SQLAlchemy</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">VB</span>
+          <div>
+            <p class="footer-name">Vijay Bairagi</p>
+            <p class="footer-title">
+              Agentic AI & Generative AI Specialist
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://linkedin.com/in/vijaybairagi" 
+             target="_blank" title="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 
+              2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Vijayvsnv" 
+             target="_blank" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 
+              3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 
+              5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 
+              16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 
+              5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 
+              3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="mailto:vijayvaishnav906@gmail.com" 
+             title="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" 
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 
+              2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          Made with passion · Indore, India
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
