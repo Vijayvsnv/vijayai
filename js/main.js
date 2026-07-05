@@ -174,9 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
            !href.startsWith('#') && !href.startsWith('mailto') && 
            !href.startsWith('tel') && !href.startsWith('wa')) {
             link.addEventListener('click', (e) => {
-                // Ignore if it's opening in a new tab
+                // Ignore new tab and download links
                 if (link.getAttribute('target') === '_blank') return;
-                
+                if (link.hasAttribute('download')) return;
+
                 e.preventDefault();
                 document.body.style.opacity = '0';
                 document.body.style.transition = 'opacity 0.3s ease';

@@ -158,6 +158,13 @@ footer {
 @media (max-width: 768px) {
   .footer-inner { padding: 0 20px; }
   .footer-links { gap: 16px; }
+  .footer-links a { font-size: 13px; }
+}
+
+@media (max-width: 480px) {
+  .footer-inner { gap: 20px; }
+  .footer-links { gap: 10px; }
+  .footer-social a { width: 34px; height: 34px; }
 }
 
 /* Responsive adjustments for universal items */

@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tark Peer — English Conversation App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <style>
+        /* ── App Hero ── */
+        .app-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .app-hero-orbs { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+        .app-orb-1 { position: absolute; width: 500px; height: 500px; border-radius: 50%; background: #4171B8; filter: blur(120px); opacity: 0.08; top: -100px; left: -150px; animation: float 10s infinite; }
+        .app-orb-2 { position: absolute; width: 350px; height: 350px; border-radius: 50%; background: #F05423; filter: blur(100px); opacity: 0.07; bottom: -80px; right: -80px; animation: floatReverse 12s infinite; }
+
+        .app-hero-inner {
+            position: relative; z-index: 10;
+            display: flex; align-items: center; gap: 64px;
+            width: 100%; max-width: 1200px;
+            margin: 0 auto; padding: 0 24px;
+        }
+        .app-hero-text { flex: 1; }
+        .app-hero-visual { flex: 0 0 340px; display: flex; justify-content: center; }
+
+        .app-name-row {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+        }
+        .app-icon-box {
+            width: 72px; height: 72px; border-radius: 20px;
+            background: #fff;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 30px rgba(65,113,184,0.3);
+            overflow: hidden; flex-shrink: 0;
+        }
+        .app-icon-box img { width: 100%; height: 100%; object-fit: contain; }
+        .app-name { font-size: 48px; font-weight: 800; margin: 0;
+            background: linear-gradient(90deg, #F05423, #FCC211, #39C6F4);
+            background-size: 300%; -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; animation: gradientShift 5s ease infinite;
+        }
+
+        .app-tagline {
+            font-size: 20px; color: var(--text-muted); margin: 0 0 32px 0; line-height: 1.7; max-width: 520px;
+        }
+
+        .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+        .badge-android {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(65,113,184,0.12); border: 1px solid rgba(65,113,184,0.3);
+            padding: 6px 16px; border-radius: 20px; color: #4171B8; font-size: 13px; font-weight: 500;
+        }
+        .badge-free {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(39,174,96,0.1); border: 1px solid rgba(39,174,96,0.2);
+            padding: 6px 16px; border-radius: 20px; color: var(--accent-green); font-size: 13px; font-weight: 500;
+        }
+        .badge-version {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);
+            padding: 6px 16px; border-radius: 20px; color: var(--text-muted); font-size: 13px;
+        }
+
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: linear-gradient(135deg, #4171B8, #F05423);
+            color: #fff; padding: 16px 36px; border-radius: 12px;
+            font-size: 18px; font-weight: 700; text-decoration: none;
+            box-shadow: 0 0 30px rgba(65,113,184,0.35);
+            transition: all 0.3s ease; border: none; cursor: pointer;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(65,113,184,0.5);
+        }
+        .download-btn svg { flex-shrink: 0; }
+        .download-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+
+        /* ── Phone Mockup ── */
+        .phone-mockup {
+            width: 240px; height: 480px;
+            background: #111; border-radius: 36px;
+            border: 2px solid #222;
+            box-shadow: 0 0 60px rgba(65,113,184,0.2), 0 40px 80px rgba(0,0,0,0.6);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .phone-notch {
+            width: 80px; height: 22px; background: #000;
+            border-radius: 0 0 14px 14px; margin: 0 auto;
+        }
+        .phone-screen {
+            flex: 1; display: flex; flex-direction: column; align-items: center;
+            justify-content: center; padding: 20px; gap: 16px;
+        }
+        .phone-call-circle {
+            width: 120px; height: 120px; border-radius: 28px;
+            background: #fff;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 40px rgba(240,84,35,0.35), 0 0 0 6px rgba(240,84,35,0.15);
+            animation: phonePulse 2s ease-in-out infinite;
+            overflow: hidden;
+        }
+        @keyframes phonePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(240,84,35,0.4); }
+            50% { transform: scale(1.06); box-shadow: 0 0 60px rgba(240,84,35,0.6); }
+        }
+        .phone-label { color: #fff; font-size: 14px; font-weight: 600; }
+        .phone-sub { color: #555; font-size: 11px; text-align: center; }
+        .phone-wave {
+            display: flex; align-items: flex-end; gap: 4px; height: 30px;
+        }
+        .wave-bar {
+            width: 4px; background: #4171B8; border-radius: 2px;
+            animation: waveAnim 1s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(1) { height: 10px; animation-delay: 0s; }
+        .wave-bar:nth-child(2) { height: 22px; animation-delay: 0.15s; }
+        .wave-bar:nth-child(3) { height: 30px; animation-delay: 0.3s; }
+        .wave-bar:nth-child(4) { height: 18px; animation-delay: 0.45s; }
+        .wave-bar:nth-child(5) { height: 10px; animation-delay: 0.6s; }
+        @keyframes waveAnim {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.5; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+        .phone-home-bar {
+            width: 80px; height: 4px; background: #333;
+            border-radius: 2px; margin: 12px auto;
+        }
+
+        /* ── Stats Strip ── */
+        .stats-strip {
+            display: flex; gap: 0;
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 16px; overflow: hidden; margin: 60px 0;
+        }
+        .stat-item {
+            flex: 1; padding: 32px 24px; text-align: center;
+            border-right: 1px solid var(--border-color);
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-num { font-size: 36px; font-weight: 800; color: #4171B8; display: block; }
+        .stat-label { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+        /* ── Features ── */
+        .feature-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 16px; padding: 32px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: #4171B8;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(65,113,184,0.15);
+        }
+        .feature-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: rgba(65,113,184,0.1); border: 1px solid rgba(65,113,184,0.2);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px; font-size: 24px;
+        }
+        .feature-card h3 { font-size: 20px; margin: 0 0 10px 0; }
+        .feature-card p { color: var(--text-muted); font-size: 15px; margin: 0; line-height: 1.7; }
+
+        /* ── How It Works ── */
+        .steps-row { display: flex; gap: 0; position: relative; }
+        .steps-row::before {
+            content: '';
+            position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+            background: linear-gradient(90deg, #4171B8, #F05423);
+            z-index: 0;
+        }
+        .step-card {
+            flex: 1; text-align: center; padding: 0 24px; position: relative; z-index: 1;
+        }
+        .step-num {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: linear-gradient(135deg, #4171B8, #F05423);
+            color: #fff; font-size: 22px; font-weight: 800;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(65,113,184,0.4);
+        }
+        .step-card h3 { font-size: 18px; margin: 0 0 8px 0; }
+        .step-card p { color: var(--text-muted); font-size: 14px; margin: 0; line-height: 1.6; }
+
+        /* ── Games Grid ── */
+        .game-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px;
+            display: flex; align-items: center; gap: 16px;
+            transition: all 0.3s ease;
+        }
+        .game-card:hover {
+            border-color: rgba(240,84,35,0.4);
+            transform: translateX(4px);
+        }
+        .game-emoji { font-size: 32px; flex-shrink: 0; }
+        .game-info h4 { margin: 0 0 4px 0; font-size: 16px; }
+        .game-info p { margin: 0; color: var(--text-muted); font-size: 13px; }
+
+
+        /* ── Download CTA ── */
+        .download-cta {
+            background: linear-gradient(135deg, rgba(65,113,184,0.1), rgba(240,84,35,0.08));
+            border: 1px solid rgba(65,113,184,0.2);
+            border-radius: 20px; padding: 64px 48px;
+            text-align: center;
+        }
+        .download-cta h2 { font-size: 36px; margin: 0 0 16px 0; }
+        .download-cta p { color: var(--text-muted); font-size: 18px; margin: 0 0 36px 0; }
+
+        @media (max-width: 992px) {
+            .app-hero-inner { flex-direction: column; text-align: center; padding-top: 40px; }
+            .app-hero-visual { display: none; }
+            .app-name-row { justify-content: center; }
+            .badge-row { justify-content: center; }
+            .steps-row { flex-direction: column; gap: 32px; }
+            .steps-row::before { display: none; }
+            .stats-strip { flex-wrap: wrap; }
+            .stat-item { flex: 1 1 45%; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .stat-item:nth-child(odd) { border-right: 1px solid var(--border-color); }
+            .stat-item:last-child { border-bottom: none; }
+            .download-cta { padding: 40px 24px; }
+            .app-tagline { margin: 0 auto 32px; }
+        }
+        @media (max-width: 768px) {
+            .app-name { font-size: 36px; }
+            .download-btn { font-size: 16px; padding: 14px 24px; width: 100%; justify-content: center; }
+            .feature-card { padding: 24px; }
+            .game-card { padding: 16px; }
+            .download-cta h2 { font-size: 26px; }
+            .download-cta p { font-size: 15px; }
+        }
+        @media (max-width: 480px) {
+            .app-name { font-size: 28px; }
+            .app-icon-box { width: 56px; height: 56px; border-radius: 14px; }
+            .stat-item { flex: 1 1 100%; border-right: none; }
+            .stat-item:nth-child(odd) { border-right: none; }
+            .stat-num { font-size: 28px; }
+            .badge-row { flex-direction: row; justify-content: center; }
+            .step-card { padding: 0 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-box">VB</div>
+                <div class="logo-text">Vijay Bairagi</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="tark-peer.html" style="color:#F05423;font-weight:600;display:flex;align-items:center;gap:6px;"><img src="images/tark-peer-icon.png" style="width:18px;height:18px;border-radius:4px;object-fit:contain;background:#fff;" alt="">Tark Peer</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-btn">Hire Me</a>
+            <button class="hamburger" id="hamburger-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="tark-peer.html" style="color:#F05423;font-weight:600;display:flex;align-items:center;gap:8px;"><img src="images/tark-peer-icon.png" style="width:20px;height:20px;border-radius:4px;background:#fff;" alt="">Tark Peer</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="app-hero">
+        <div class="app-hero-orbs">
+            <div class="app-orb-1"></div>
+            <div class="app-orb-2"></div>
+        </div>
+        <div class="app-hero-inner">
+            <div class="app-hero-text" data-aos="fade-up">
+                <div class="app-name-row">
+                    <div class="app-icon-box">
+                        <img src="images/tark-peer-icon.png" alt="Tark Peer Icon">
+                    </div>
+                    <h1 class="app-name">Tark Peer</h1>
+                </div>
+
+                <p class="app-tagline">
+                    Practice English by talking with real people — live voice calls with strangers, AI-powered learning tools, and 5 interactive games. All in one app.
+                </p>
+
+                <div class="badge-row">
+                    <span class="badge-android">
+                        <i data-lucide="smartphone" style="width:14px;height:14px"></i>
+                        Android Only
+                    </span>
+                    <span class="badge-free">
+                        <i data-lucide="gift" style="width:14px;height:14px"></i>
+                        100% Free
+                    </span>
+                    <span class="badge-version">
+                        v1.0.2
+                    </span>
+                </div>
+
+                <a href="https://github.com/Vijayvsnv/tark-peer/releases/download/v1.0.1/tark-peer.apk" download="tark-peer.apk" class="download-btn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download APK
+                </a>
+                <p class="download-note">
+                    <i data-lucide="shield-check" style="width:13px;height:13px;vertical-align:middle;margin-right:4px"></i>
+                    Safe to install · Android 7.0+ required
+                </p>
+            </div>
+
+            <div class="app-hero-visual" data-aos="fade-left" data-aos-delay="200">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="phone-call-circle">
+                            <img src="images/tark-peer-icon.png" alt="Tark Peer" style="width:64px;height:64px;object-fit:contain;border-radius:12px;">
+                        </div>
+                        <div class="phone-label">Connecting you...</div>
+                        <div class="phone-wave">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                        <div class="phone-sub">Practice English live</div>
+                    </div>
+                    <div class="phone-home-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="container" data-aos="fade-up">
+        <div class="stats-strip">
+            <div class="stat-item">
+                <span class="stat-num">5</span>
+                <div class="stat-label">Learning Levels</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">75+</span>
+                <div class="stat-label">Practice Topics</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">5</span>
+                <div class="stat-label">Mini Games</div>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">30min</span>
+                <div class="stat-label">Max Call Duration</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section container" data-aos="fade-up">
+        <h2 class="section-title">Core Features</h2>
+        <div class="grid-2" style="gap: 24px;">
+
+            <div class="feature-card" data-aos="fade-up">
+                <div class="feature-icon">📞</div>
+                <h3>Random Voice Calls</h3>
+                <p>Get matched with a random English learner instantly. Talk live for up to 30 minutes over high-quality Agora RTC audio. Real conversations, real practice.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">📚</div>
+                <h3>Guided Learning Topics</h3>
+                <p>5 progressive levels with 15 topics each — from Icebreakers to Debate Club. Each topic gives you a conversation starter to use in your next call.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="feature-icon">🎮</div>
+                <h3>5 Interactive Games</h3>
+                <p>Vocabulary Quiz, Word Scramble, Fill in Blanks, Pronunciation Challenge (voice-checked), and Dictation. Three difficulty levels each, with stars and streaks.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">👥</div>
+                <h3>Friends & Direct Calls</h3>
+                <p>Add people you meet as friends, call them directly anytime, and chat with 24-hour ephemeral messages. See who's online with live presence indicators.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="feature-icon">📊</div>
+                <h3>Progress Tracking</h3>
+                <p>Track total calls, time spent, call streak, weekly comparison, game accuracy, and game day streak — all in one clean Progress tab.</p>
+            </div>
+
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">⭐</div>
+                <h3>Call Rating System</h3>
+                <p>Rate your conversation partner after each call (1–5 stars). Builds community quality and helps the matching algorithm surface better partners over time.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section container" data-aos="fade-up">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-row" style="margin-top: 48px;">
+            <div class="step-card" data-aos="fade-up">
+                <div class="step-num">1</div>
+                <h3>Sign Up Free</h3>
+                <p>Create your account in seconds. Complete your profile — name, age, country, and a preset avatar.</p>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="step-num">2</div>
+                <h3>Tap "Tark Here"</h3>
+                <p>Hit the big orange button. The app instantly matches you with another English learner ready to talk.</p>
+            </div>
+            <div class="step-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="step-num">3</div>
+                <h3>Talk & Learn</h3>
+                <p>Have a real conversation. Use topic cards for ideas. Add them as friends after the call.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games -->
+    <section class="section container" data-aos="fade-up">
+        <h2 class="section-title">Mini Games</h2>
+        <p style="color: var(--text-muted); margin: -32px 0 40px 20px; font-size: 16px;">3 difficulty levels each — unlock as you progress</p>
+        <div class="grid-2" style="gap: 16px;">
+            <div class="game-card" data-aos="fade-up">
+                <div class="game-emoji">🧠</div>
+                <div class="game-info">
+                    <h4>Vocabulary Quiz</h4>
+                    <p>Pick the correct meaning from 4 choices</p>
+                </div>
+            </div>
+            <div class="game-card" data-aos="fade-up" data-aos-delay="80">
+                <div class="game-emoji">🔀</div>
+                <div class="game-info">
+                    <h4>Word Scramble</h4>
+                    <p>Unscramble shuffled letters to form the word</p>
+                </div>
+            </div>
+            <div class="game-card" data-aos="fade-up" data-aos-delay="120">
+                <div class="game-emoji">✏️</div>
+                <div class="game-info">
+                    <h4>Fill in the Blanks</h4>
+                    <p>Complete sentences with the missing word</p>
+                </div>
+            </div>
+            <div class="game-card" data-aos="fade-up" data-aos-delay="160">
+                <div class="game-emoji">🎤</div>
+                <div class="game-info">
+                    <h4>Pronunciation Challenge</h4>
+                    <p>Say the word aloud — mic checks your pronunciation</p>
+                </div>
+            </div>
+            <div class="game-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="game-emoji">👂</div>
+                <div class="game-info">
+                    <h4>Dictation</h4>
+                    <p>Listen to a sentence, type what you hear</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Download CTA -->
+    <section class="container" style="padding-bottom: 100px;" data-aos="zoom-in">
+        <div class="download-cta">
+            <div style="display:inline-flex;align-items:center;gap:16px;background:#fff;padding:14px 28px;border-radius:16px;margin-bottom:28px;box-shadow:0 0 30px rgba(240,84,35,0.2);">
+                <img src="images/tark-peer-logo.png" alt="Tark Peer" style="height:48px;object-fit:contain;">
+            </div>
+            <h2>Ready to speak better English?</h2>
+            <p>Download free. No subscriptions. No ads. Just real conversations.</p>
+            <a href="https://github.com/Vijayvsnv/tark-peer/releases/download/v1.0.1/tark-peer.apk" download="tark-peer.apk" class="download-btn" style="display: inline-flex;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Tark Peer APK
+            </a>
+            <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+                Android 7.0+ · Enable "Install from Unknown Sources" in settings before installing
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">VB</span>
+                <div>
+                    <p class="footer-name">Vijay Bairagi</p>
+                    <p class="footer-title">Agentic AI & Generative AI Specialist</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+                <a href="tark-peer.html" style="color:#F05423;font-weight:600;display:flex;align-items:center;gap:6px;"><img src="images/tark-peer-icon.png" style="width:18px;height:18px;border-radius:4px;object-fit:contain;background:#fff;" alt="">Tark Peer</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/vijaybairagi" target="_blank" title="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                        <rect x="2" y="9" width="4" height="12"/>
+                        <circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/Vijayvsnv" target="_blank" title="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                    </svg>
+                </a>
+                <a href="mailto:vijayvaishnav906@gmail.com" title="Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-copy">Made with passion · Indore, India</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

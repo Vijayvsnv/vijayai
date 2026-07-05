@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,6 +22,7 @@
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
                 <a href="contact.html">Contact</a>
+                <a href="tark-peer.html" style="color:#F05423;font-weight:600;display:flex;align-items:center;gap:6px;"><img src="images/tark-peer-icon.png" style="width:18px;height:18px;border-radius:4px;object-fit:contain;background:#fff;" alt="">Tark Peer</a>
             </div>
             <a href="contact.html" class="btn btn-primary nav-btn">Hire Me</a>
             <button class="hamburger" id="hamburger-btn">
@@ -36,6 +37,7 @@
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
+        <a href="tark-peer.html" style="color:#F05423;font-weight:600;display:flex;align-items:center;gap:8px;"><img src="images/tark-peer-icon.png" style="width:20px;height:20px;border-radius:4px;background:#fff;" alt="">Tark Peer</a>
     </div>
 
     <header class="page-hero">
@@ -47,57 +49,92 @@
 
     <section class="section container">
         <div class="grid-2">
+
+            <!-- 1. Tark Peer -->
+            <div class="project-card" data-aos="fade-up" style="border-color: rgba(240,84,35,0.2);">
+                <div class="project-header">
+                    <span class="tag" style="background:rgba(240,84,35,0.1);color:#F05423;">Mobile App · Personal</span>
+                    <i data-lucide="smartphone" style="color:var(--text-muted)"></i>
+                </div>
+                <h3 style="display:flex;align-items:center;gap:10px;">
+                    Tark Peer
+                    <img src="images/tark-peer-icon.png" alt="" style="width:28px;height:28px;border-radius:7px;background:#fff;">
+                </h3>
+                <p>English conversation practice app — live Agora RTC voice calls with random partners, 5 progressive learning levels with 75+ topics, 5 interactive games (Vocab Quiz, Word Scramble, Dictation, Pronunciation, Fill-in-Blanks), friend system, real-time chat, and progress tracking.</p>
+                <div class="tech-pills" style="margin-bottom: 24px;">
+                    <span class="pill">Flutter</span><span class="pill">FastAPI</span><span class="pill">Supabase</span><span class="pill">Agora RTC</span><span class="pill">Redis</span><span class="pill">WebSocket</span>
+                </div>
+                <a href="tark-peer.html" class="btn btn-outline" style="align-self:flex-start;width:100%;border-color:#F05423;color:#F05423;">View App & Download</a>
+            </div>
+
+            <!-- 2. AI Field Service Platform -->
             <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <span class="tag tag-purple">Enterprise AI · Estonia</span>
+                    <i data-lucide="shield" style="color:var(--text-muted)"></i>
+                </div>
+                <h3>AI Field Service Platform</h3>
+                <p style="font-size:13px;color:var(--accent-cyan);margin:-8px 0 12px;font-weight:500;">Confidential — ParnuAI OÜ · May–Jun 2026</p>
+                <p>End-to-end AI video processing pipeline using Google Gemini VLM — video chunking, transcription, SOP compliance analysis & automated structured report generation. RAG pipeline with pgvector + 6 Supabase Edge Functions. Cross-platform mobile app (React Native + Expo) and admin dashboard deployed on Vercel with GitHub CI/CD.</p>
+                <div class="tech-pills" style="margin-bottom: 24px;">
+                    <span class="pill">Gemini VLM</span><span class="pill">RAG</span><span class="pill">pgvector</span><span class="pill">Supabase</span><span class="pill">React Native</span><span class="pill">React.js</span><span class="pill">Vercel</span>
+                </div>
+            </div>
+
+            <!-- 2. AI Warehouse Monitoring Copilot -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-header">
+                    <span class="tag tag-cyan">Computer Vision · Freelance</span>
+                    <i data-lucide="camera" style="color:var(--text-muted)"></i>
+                </div>
+                <h3>AI Warehouse Monitoring Copilot</h3>
+                <p style="font-size:13px;color:var(--accent-cyan);margin:-8px 0 12px;font-weight:500;">Apr–May 2026</p>
+                <p>CCTV image → GPT-4o vision generates WAMS safety reports. Built end-to-end RAG pipeline with Pinecone (3072-dim), multi-turn chat with real-time GPT-4o vision and context-aware image locking. FastAPI + React deployed on Render with Cloudinary CDN and auto-deploy from GitHub.</p>
+                <div class="tech-pills" style="margin-bottom: 24px;">
+                    <span class="pill">GPT-4o Vision</span><span class="pill">RAG</span><span class="pill">Pinecone</span><span class="pill">FastAPI</span><span class="pill">React</span><span class="pill">Cloudinary</span><span class="pill">Render</span>
+                </div>
+            </div>
+
+            <!-- 3. AI Electrician Assistant -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header">
+                    <span class="tag tag-blue">VLM · United Kingdom</span>
+                    <i data-lucide="zap" style="color:var(--text-muted)"></i>
+                </div>
+                <h3>AI Electrician Assistant — Smart Helmet</h3>
+                <p>VLM-based smart helmet system for real-time electrical fault detection and resolution. Fine-tuned models with LoRA for domain-specific image understanding. AI generates step-by-step repair solutions. FastAPI-based real-time inference pipeline for seamless vision-language processing.</p>
+                <div class="tech-pills" style="margin-bottom: 24px;">
+                    <span class="pill">VLMs</span><span class="pill">LoRA</span><span class="pill">PyTorch</span><span class="pill">Transformers</span><span class="pill">FastAPI</span><span class="pill">TorchAudio</span>
+                </div>
+            </div>
+
+            <!-- 4. AI Sales Agent -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-header">
                     <span class="tag tag-cyan">Agentic AI</span>
                     <i data-lucide="cpu" style="color:var(--text-muted)"></i>
                 </div>
-                <h3>AI Sales Agent</h3>
-                <p>Built a multi-agent system that completely replaces a human sales rep. The agent qualifies inbound leads, sends personalized follow-ups, answers product queries using RAG and books calendar meetings autonomously.</p>
+                <h3>AI Sales Agent — Agentic System</h3>
+                <p style="font-size:13px;color:var(--accent-cyan);margin:-8px 0 12px;font-weight:500;">Codenscious Technologies</p>
+                <p>Autonomous AI agent that makes outbound calls, conducts human-like conversations and delivers personalized sales pitches. LLM-based intent detection qualifies leads (interested / not interested / follow-up). Automated CRM updates via webhook pipelines logging conversation insights and lead status into Google Sheets.</p>
                 <div class="tech-pills" style="margin-bottom: 24px;">
-                    <span class="pill">Vapi AI</span><span class="pill">LangChain</span><span class="pill">RAG</span><span class="pill">FastAPI</span><span class="pill">Python</span>
+                    <span class="pill">n8n</span><span class="pill">Twilio</span><span class="pill">ElevenLabs</span><span class="pill">LLMs</span><span class="pill">Webhooks</span><span class="pill">Google Sheets</span>
                 </div>
-                <a href="#" class="btn btn-outline" style="align-self: flex-start; width:100%;">View Project</a>
             </div>
 
+            <!-- 5. Warehouse Robot -->
             <div class="project-card" data-aos="fade-up">
                 <div class="project-header">
-                    <span class="tag tag-purple">Computer Vision</span>
+                    <span class="tag tag-purple">Computer Vision · USA</span>
                     <i data-lucide="eye" style="color:var(--text-muted)"></i>
                 </div>
                 <h3>Warehouse Robot — Object Detection</h3>
-                <p>Designed an AI-powered warehouse robot using CNN for real-time object detection and Reinforcement Learning for dynamic path optimization. Achieved 90%+ detection accuracy with Flask API for visualization.</p>
+                <p>AI-based warehouse robot using CNN for real-time object detection and Reinforcement Learning for dynamic path optimization. Achieved 90%+ detection accuracy in real-time scenarios. Built FastAPI endpoints for visualization and system interaction.</p>
                 <div class="tech-pills" style="margin-bottom: 24px;">
-                    <span class="pill">CNN</span><span class="pill">PyTorch</span><span class="pill">Reinforcement Learning</span><span class="pill">Flask</span><span class="pill">FastAPI</span>
+                    <span class="pill">CNN</span><span class="pill">Reinforcement Learning</span><span class="pill">PyTorch</span><span class="pill">FastAPI</span>
                 </div>
-                <a href="#" class="btn btn-outline" style="align-self: flex-start; width:100%;">View Project</a>
             </div>
 
-            <div class="project-card" data-aos="fade-up">
-                <div class="project-header">
-                    <span class="tag tag-blue">Machine Learning</span>
-                    <i data-lucide="bar-chart" style="color:var(--text-muted)"></i>
-                </div>
-                <h3>Loan Prediction System</h3>
-                <p>End-to-end ML pipeline for loan approval prediction using Random Forest. Includes data cleaning, feature engineering, model training, evaluation and Flask deployment.</p>
-                <div class="tech-pills" style="margin-bottom: 24px;">
-                    <span class="pill">Python</span><span class="pill">Random Forest</span><span class="pill">Scikit-learn</span><span class="pill">Flask</span><span class="pill">Pandas</span>
-                </div>
-                <a href="#" class="btn btn-outline" style="align-self: flex-start; width:100%;">View Project</a>
-            </div>
-
-            <div class="project-card" data-aos="fade-up">
-                <div class="project-header">
-                    <span class="tag tag-green">Generative AI</span>
-                    <i data-lucide="sparkles" style="color:var(--text-muted)"></i>
-                </div>
-                <h3>VLM Fine-tuning with LoRA</h3>
-                <p>Fine-tuned Vision Language Models using LoRA (Low-Rank Adaptation) for domain-specific image-to-text tasks. Improved task-specific accuracy by 15-20% over baseline models.</p>
-                <div class="tech-pills" style="margin-bottom: 24px;">
-                    <span class="pill">LoRA</span><span class="pill">CLIP</span><span class="pill">VLM</span><span class="pill">HuggingFace</span><span class="pill">PyTorch</span>
-                </div>
-                <a href="#" class="btn btn-outline" style="align-self: flex-start; width:100%;">View Project</a>
-            </div>
         </div>
     </section>
 
@@ -174,3 +211,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
