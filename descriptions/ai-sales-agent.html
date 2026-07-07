@@ -52,9 +52,9 @@
             <div style="background: rgba(0, 212, 255, 0.1); width: 120px; height: 120px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 30px rgba(0, 212, 255, 0.3); margin: 0 auto 32px auto;" data-aos="zoom-in">
                 <i data-lucide="bot" style="width: 80px; height: 80px; color: var(--accent-cyan);"></i>
             </div>
-            <h1 class="page-title" data-aos="fade-up" style="font-size: 56px;">AI Sales Agent</h1>
+            <h1 class="page-title" data-aos="fade-up">AI Sales Agent</h1>
             <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100" style="font-size: 20px; margin-bottom: 32px; color: white;">Your autonomous 24/7 sales representative</p>
-            <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="200">
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="200">
                 <span class="badge" style="margin: 0;">Agentic AI</span>
                 <span class="badge" style="margin: 0; color: var(--accent-purple); border-color: rgba(155, 81, 224, 0.3); background: rgba(155, 81, 224, 0.1);">LangChain + RAG</span>
             </div>
@@ -65,7 +65,7 @@
     <section class="section container">
         
         <!-- What it does -->
-        <div class="service-card" data-aos="fade-up" style="margin-bottom: 80px; padding: 48px;">
+        <div class="service-card" data-aos="fade-up" style="margin-bottom: 80px; padding: clamp(20px,5vw,48px);">
             <h2 class="section-title" style="margin-bottom: 24px;">What It Does</h2>
             <p style="font-size: 18px; line-height: 1.8; color: var(--text-muted); margin: 0;">
                 An AI Sales Agent completely replaces your manual sales process. It monitors incoming leads, qualifies them based on your criteria, sends personalized follow-up messages, answers product queries using your knowledge base, and automatically books meetings in your calendar — all without any human involvement. Works 24 hours, 7 days a week.
@@ -105,7 +105,7 @@
         <div class="grid-2" style="margin-bottom: 80px;">
             <div data-aos="fade-right">
                 <h2 class="section-title">Key Features</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
                     <div style="background: var(--card-bg); padding: 24px; border: 1px solid var(--border-color); border-radius: 12px;">
                         <i data-lucide="clock" style="color: var(--accent-cyan); margin-bottom: 12px;"></i>
                         <p style="margin:0; font-weight: 500;">24/7 availability — never miss a lead</p>

@@ -165,6 +165,7 @@ footer {
   .footer-inner { gap: 20px; }
   .footer-links { gap: 10px; }
   .footer-social a { width: 34px; height: 34px; }
+  .typing-wrapper { min-width: 0; width: auto; }
 }
 
 /* Responsive adjustments for universal items */

@@ -120,6 +120,7 @@
   .page-hero { padding: 120px 0 60px 0; }
   .section { padding: 60px 0; }
   .section-title { font-size: 28px; }
+  .hero-photo-container { margin: 0 auto; }
 }
 
 @media (max-width: 768px) {
